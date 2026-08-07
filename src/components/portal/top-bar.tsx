@@ -97,14 +97,18 @@ export function TopBar() {
     <header className="glass-bar sticky top-0 z-40 border-b border-border">
       <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-2.5 lg:grid-cols-[auto_minmax(0,1fr)_auto]">
         <div className="flex min-w-0 items-center gap-3">
-          <Link to="/" className="flex shrink-0 items-center gap-2">
-            <div className="alloy-silver specular-sweep grid h-7 w-7 shrink-0 place-items-center rounded font-mono text-sm font-bold">
+          <Link to="/" className="flex shrink-0 items-center gap-2.5">
+            <div className="grid h-9 w-9 shrink-0 place-items-center rounded-md border border-primary/60 bg-primary/10 font-mono text-sm font-bold text-primary shadow-[0_0_22px_-6px_var(--vivid)]">
               1C
             </div>
-            <span className="hidden font-mono text-sm font-semibold tracking-tight sm:inline">
-              onecl<span className="text-primary">ick</span>.platform
+            <span className="hidden leading-tight sm:block">
+              <span className="block text-sm font-bold tracking-[0.06em]">ONECLICK</span>
+              <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                Titanium Control Plane
+              </span>
             </span>
           </Link>
+
           <span className="hidden items-center gap-1.5 rounded-full border border-border px-2 py-0.5 font-mono text-[10px] text-muted-foreground md:inline-flex">
             <span className="dot-live" />
             Alle Systeme betriebsbereit
