@@ -26,11 +26,12 @@ export function SectionDock({ className }: { className?: string }) {
             key={item.to}
             to={item.to}
             className={cn(
-              "group flex min-w-[6.5rem] flex-1 flex-col items-center gap-2 rounded-md px-3 py-3 text-center transition-colors",
+              "titan-case group flex min-w-[6.5rem] flex-1 flex-col items-center gap-2 px-3 py-3 text-center transition-colors",
               active
                 ? "bg-[color-mix(in_oklab,var(--eu)_34%,transparent)] text-foreground shadow-[inset_0_0_0_1px_oklch(0.72_0.15_265/0.65),0_0_26px_-8px_oklch(0.72_0.15_265)]"
-                : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground",
+                : "text-muted-foreground hover:text-foreground",
             )}
+
           >
             <item.icon
               className={cn(
