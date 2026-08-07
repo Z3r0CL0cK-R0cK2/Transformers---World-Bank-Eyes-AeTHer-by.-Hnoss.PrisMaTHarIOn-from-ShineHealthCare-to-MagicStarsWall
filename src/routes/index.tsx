@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Boxes, Container, LayoutGrid, ShieldCheck, Terminal, Zap } from "lucide-react";
 import { TopBar } from "@/components/portal/top-bar";
+import { EuStars } from "@/components/portal/eu-stars";
 import { BlueprintBackground } from "@/components/portal/blueprint-background";
 import { BootstrapTerminal } from "@/components/portal/bootstrap-terminal";
 import { SectionDock } from "@/components/portal/section-dock";
@@ -36,22 +37,32 @@ function Landing() {
       <main>
         <section className="relative overflow-hidden border-b border-border px-4 pb-10 pt-16 lg:px-8">
           <StatusNodes />
+          <EuStars
+            size={420}
+            className="absolute left-1/2 top-24 -translate-x-1/2 opacity-[0.22] mix-blend-screen"
+          />
           <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
-            <span className="glass-panel prism-edge inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-primary">
+            <span className="glass-panel prism-edge text-rise inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-primary">
               <Zap className="h-3 w-3" /> Titanium One-Click Control Plane
             </span>
 
-            <h1 className="mt-6 text-balance text-[2.85rem] font-bold leading-[1.03] tracking-tight sm:text-6xl lg:text-[4.15rem]">
-              Der gesamte Lifecycle.
+            <h1
+              className="text-glow-soft text-rise mt-6 text-balance text-[2.4rem] font-bold leading-[1.05] tracking-tight sm:text-[3.1rem] lg:text-[3.55rem]"
+              style={{ animationDelay: "80ms" }}
+            >
+              <span className="text-shimmer">Der gesamte Lifecycle.</span>
               <br />
-              In einer Oberfläche.
+              <span className="text-shimmer">In einer Oberfläche.</span>
             </h1>
 
-            <p className="mt-3 text-[1.6rem] font-bold tracking-tight sm:text-[2.05rem]">
-              <span className="text-foreground">Von der </span>
-              <span className="text-[oklch(0.74_0.17_265)]">Recherche</span>
-              <span className="text-foreground"> bis zum </span>
-              <span className="text-primary">Deployment.</span>
+            <p
+              className="text-rise mt-3 text-[1.35rem] font-bold tracking-tight sm:text-[1.75rem]"
+              style={{ animationDelay: "160ms" }}
+            >
+              <span className="text-foreground text-glow-soft">Von der </span>
+              <span className="text-glow-eu text-[oklch(0.74_0.17_265)]">Recherche</span>
+              <span className="text-foreground text-glow-soft"> bis zum </span>
+              <span className="text-glow-vivid text-primary">Deployment.</span>
             </p>
 
             <span className="mt-3 flex items-center gap-1.5">
@@ -59,10 +70,14 @@ function Landing() {
               <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/50" />
             </span>
 
-            <p className="mt-5 max-w-xl text-[0.95rem] leading-relaxed text-foreground/75 sm:text-base">
+            <p
+              className="text-rise mt-5 max-w-xl text-[0.95rem] leading-relaxed text-foreground/80 sm:text-base"
+              style={{ animationDelay: "240ms" }}
+            >
               Entdecke APIs, SDKs, Docker-Images und MCP-Server. Baue deine Infrastruktur, verbinde
               Services und deploye direkt aus einer Oberfläche.
             </p>
+
 
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button asChild size="lg" className="glass-click gap-1.5 font-mono text-[13px]">
@@ -89,7 +104,15 @@ function Landing() {
 
         <section className="px-4 py-10 lg:px-8">
           <SectionDock />
+          <div className="mt-4 flex justify-center">
+            <Button asChild variant="outline" size="sm" className="gap-1.5 font-mono text-xs">
+              <Link to="/netzwerk">
+                Validiertes Ecosystem-Netzwerk <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </Button>
+          </div>
         </section>
+
 
 
 
@@ -114,7 +137,8 @@ function Landing() {
         </section>
 
         <section className="border-t border-border px-4 py-12 lg:px-8">
-          <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 rounded-md border border-border bg-card p-6">
+          <div className="titan-case specular-sweep mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 p-6">
+
             <div className="min-w-0">
               <h2 className="flex items-center gap-2 text-base font-semibold">
                 <Boxes className="h-4 w-4 text-primary" /> Bereit für den ersten Deploy?
@@ -149,12 +173,13 @@ function Feature({
   body: string;
 }) {
   return (
-    <div>
-      <div className="grid h-8 w-8 place-items-center rounded border border-border bg-card">
+    <div className="titan-case specular-sweep p-5">
+      <div className="grid h-9 w-9 place-items-center rounded border border-border bg-card/60 glow-eu">
         <Icon className="h-4 w-4 text-primary" />
       </div>
-      <h3 className="mt-3 text-sm font-semibold">{title}</h3>
+      <h3 className="text-glow-soft mt-3 text-sm font-semibold">{title}</h3>
       <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{body}</p>
     </div>
   );
+
 }
