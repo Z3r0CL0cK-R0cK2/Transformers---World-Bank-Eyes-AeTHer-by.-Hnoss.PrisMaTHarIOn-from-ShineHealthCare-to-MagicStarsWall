@@ -2,20 +2,21 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Boxes, Container, ShieldCheck, Terminal, Zap } from "lucide-react";
 import { TopBar } from "@/components/portal/top-bar";
 import { BlueprintBackground } from "@/components/portal/blueprint-background";
-import { CodeBlock } from "@/components/portal/code-block";
+import { BootstrapTerminal } from "@/components/portal/bootstrap-terminal";
+import { StatusNodes } from "@/components/portal/status-nodes";
 import { Button } from "@/components/ui/button";
-import { bootstrapperScript, navSections } from "@/components/portal/nav-config";
+import { navSections } from "@/components/portal/nav-config";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "oneclick.platform — Developer & Partner Control Plane" },
+      { title: "oneclick.platform — Titanium Control Plane" },
       {
         name: "description",
         content:
           "Zentrale Control Plane für Entwickler, ISVs und Enterprise-Partner: One-Click-Setup, SDKs, MCP-Katalog, Zertifizierung und Deployments.",
       },
-      { property: "og:title", content: "oneclick.platform — Developer & Partner Control Plane" },
+      { property: "og:title", content: "oneclick.platform — Titanium Control Plane" },
       {
         property: "og:description",
         content:
@@ -32,40 +33,36 @@ function Landing() {
       <BlueprintBackground />
       <TopBar />
       <main>
-        <section className="border-b border-border px-4 py-16 lg:px-8">
-          <div className="mx-auto max-w-5xl">
-            <span className="glass-panel prism-edge inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-primary">
-              <Zap className="h-3 w-3" /> Titanium One-Click Control Plane
+        <section className="relative overflow-hidden border-b border-border px-4 py-20 lg:px-8 lg:py-24">
+          <StatusNodes />
+          <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+            <span className="glass-panel prism-edge inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-primary">
+              <Zap className="h-3 w-3" /> Onetclick Titanium Control Plane
             </span>
-            <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
-              Eine Oberfläche für den ganzen Lifecycle — von der Recherche bis zum
-              <span className="text-alloy"> Live-Deployment</span>.
+
+            <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.4rem]">
+              Der gesamte Lifecycle.
+              <br />
+              In einer Oberfläche.
             </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Verifizierte SDKs, fertige Docker-Templates, ein nativer MCP-Katalog für KI-Agenten,
-              automatisierte ISV-Zertifizierung mit einbettbaren Badges und Deployments in einem
-              Klick — verdrahtet auf einer unendlichen Node-Canvas.
+
+            <p className="text-alloy mt-5 max-w-2xl text-base font-medium leading-relaxed sm:text-lg">
+              Verifizierte SDKs, Docker-Templates, nativer MCP-Katalog, ISV-Zertifizierung und
+              One-Click-Deployments — verdrahtet auf einer unendlichen Node-Canvas.
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button asChild className="glass-click gap-1.5 font-mono text-xs">
                 <Link to="/auth">
                   In 30 Sekunden starten <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </Button>
               <Button asChild variant="outline" className="glass-click font-mono text-xs">
-                <Link to="/entdecken">Ökosystem durchsuchen</Link>
+                <Link to="/entdecken">Ökosystem entdecken</Link>
               </Button>
             </div>
 
-            <div className="mt-10 max-w-3xl">
-              <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                Universal Bootstrapper
-              </p>
-              <div className="glass-panel prism-edge specular-sweep overflow-hidden">
-                <CodeBlock label="bash" code={bootstrapperScript} />
-              </div>
-            </div>
+            <BootstrapTerminal className="mt-12 w-full text-left" />
           </div>
         </section>
 
@@ -86,6 +83,7 @@ function Landing() {
             ))}
           </div>
         </section>
+
 
         <section className="border-t border-border px-4 py-12 lg:px-8">
           <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
