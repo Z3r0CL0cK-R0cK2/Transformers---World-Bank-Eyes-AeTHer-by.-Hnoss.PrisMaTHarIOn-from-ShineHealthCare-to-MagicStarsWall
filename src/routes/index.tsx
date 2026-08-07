@@ -36,22 +36,32 @@ function Landing() {
       <main>
         <section className="relative overflow-hidden border-b border-border px-4 pb-10 pt-16 lg:px-8">
           <StatusNodes />
+          <EuStars
+            size={420}
+            className="absolute left-1/2 top-24 -translate-x-1/2 opacity-[0.22] mix-blend-screen"
+          />
           <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
-            <span className="glass-panel prism-edge inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-primary">
+            <span className="glass-panel prism-edge text-rise inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-primary">
               <Zap className="h-3 w-3" /> Titanium One-Click Control Plane
             </span>
 
-            <h1 className="mt-6 text-balance text-[2.85rem] font-bold leading-[1.03] tracking-tight sm:text-6xl lg:text-[4.15rem]">
-              Der gesamte Lifecycle.
+            <h1
+              className="text-glow-soft text-rise mt-6 text-balance text-[2.4rem] font-bold leading-[1.05] tracking-tight sm:text-[3.1rem] lg:text-[3.55rem]"
+              style={{ animationDelay: "80ms" }}
+            >
+              <span className="text-shimmer">Der gesamte Lifecycle.</span>
               <br />
-              In einer Oberfläche.
+              <span className="text-shimmer">In einer Oberfläche.</span>
             </h1>
 
-            <p className="mt-3 text-[1.6rem] font-bold tracking-tight sm:text-[2.05rem]">
-              <span className="text-foreground">Von der </span>
-              <span className="text-[oklch(0.74_0.17_265)]">Recherche</span>
-              <span className="text-foreground"> bis zum </span>
-              <span className="text-primary">Deployment.</span>
+            <p
+              className="text-rise mt-3 text-[1.35rem] font-bold tracking-tight sm:text-[1.75rem]"
+              style={{ animationDelay: "160ms" }}
+            >
+              <span className="text-foreground text-glow-soft">Von der </span>
+              <span className="text-glow-eu text-[oklch(0.74_0.17_265)]">Recherche</span>
+              <span className="text-foreground text-glow-soft"> bis zum </span>
+              <span className="text-glow-vivid text-primary">Deployment.</span>
             </p>
 
             <span className="mt-3 flex items-center gap-1.5">
@@ -59,10 +69,14 @@ function Landing() {
               <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/50" />
             </span>
 
-            <p className="mt-5 max-w-xl text-[0.95rem] leading-relaxed text-foreground/75 sm:text-base">
+            <p
+              className="text-rise mt-5 max-w-xl text-[0.95rem] leading-relaxed text-foreground/80 sm:text-base"
+              style={{ animationDelay: "240ms" }}
+            >
               Entdecke APIs, SDKs, Docker-Images und MCP-Server. Baue deine Infrastruktur, verbinde
               Services und deploye direkt aus einer Oberfläche.
             </p>
+
 
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button asChild size="lg" className="glass-click gap-1.5 font-mono text-[13px]">
