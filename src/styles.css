@@ -270,6 +270,23 @@
   }
 }
 
+/* Etwas hellere, materiellere Glasfläche für interaktive Panels (Terminal). */
+@utility glass-lift {
+  background:
+    linear-gradient(
+      165deg,
+      color-mix(in oklab, var(--silver) 10%, transparent) 0%,
+      transparent 55%
+    ),
+    color-mix(in oklab, var(--card) 88%, var(--silver) 6%);
+  border-color: color-mix(in oklab, var(--silver) 26%, transparent);
+  box-shadow:
+    var(--shadow-titan),
+    inset 0 1px 0 color-mix(in oklab, var(--silver) 22%, transparent),
+    0 0 32px -18px var(--vivid);
+}
+
+
 @utility alloy-gold {
   background: var(--alloy-gold);
   background-size: 200% 200%;
