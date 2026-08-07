@@ -71,7 +71,7 @@ export function BootstrapTerminal({ className }: { className?: string }) {
   }
 
   return (
-    <div className={cn("glass-panel prism-edge specular-sweep p-4 sm:p-5", className)}>
+    <div className={cn("glass-panel glass-lift prism-edge specular-sweep p-4 sm:p-5", className)}>
       <div className="flex flex-wrap items-center justify-between gap-2">
         <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
           One-Click Bootstrap
@@ -82,7 +82,7 @@ export function BootstrapTerminal({ className }: { className?: string }) {
         </span>
       </div>
 
-      <div className="relative mt-3 overflow-hidden rounded-md border border-border bg-background/70">
+      <div className="relative mt-3 overflow-hidden rounded-md border border-[color-mix(in_oklab,var(--silver)_20%,transparent)] bg-background/45">
         <pre className="overflow-x-auto py-3 pl-3 pr-16 font-mono text-[13px] leading-7 text-foreground">
           <code>
             {LINES.map((line, i) => (
@@ -136,7 +136,7 @@ export function BootstrapTerminal({ className }: { className?: string }) {
       </div>
 
       {showLogs ? (
-        <pre className="mt-3 max-h-44 overflow-auto rounded-md border border-border bg-background/80 p-3 text-left font-mono text-[11px] leading-6 text-muted-foreground">
+        <pre className="mt-3 max-h-44 overflow-auto rounded-md border border-border bg-background/55 p-3 text-left font-mono text-[11px] leading-6 text-muted-foreground">
           {log.join("\n")}
         </pre>
       ) : null}

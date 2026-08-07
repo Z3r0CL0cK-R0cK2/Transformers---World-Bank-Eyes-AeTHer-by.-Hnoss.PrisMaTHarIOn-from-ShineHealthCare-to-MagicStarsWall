@@ -41,15 +41,15 @@ function Landing() {
               <Zap className="h-3 w-3" /> Titanium One-Click Control Plane
             </span>
 
-            <h1 className="mt-6 text-balance text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-[3.5rem]">
+            <h1 className="mt-6 text-balance text-[2.85rem] font-bold leading-[1.03] tracking-tight sm:text-6xl lg:text-[4.15rem]">
               Der gesamte Lifecycle.
               <br />
               In einer Oberfläche.
             </h1>
 
-            <p className="mt-2 text-2xl font-bold tracking-tight sm:text-[1.75rem]">
+            <p className="mt-3 text-[1.6rem] font-bold tracking-tight sm:text-[2.05rem]">
               <span className="text-foreground">Von der </span>
-              <span className="text-[oklch(0.68_0.18_265)]">Recherche</span>
+              <span className="text-[oklch(0.74_0.17_265)]">Recherche</span>
               <span className="text-foreground"> bis zum </span>
               <span className="text-primary">Deployment.</span>
             </p>
@@ -59,23 +59,29 @@ function Landing() {
               <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/50" />
             </span>
 
-            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <p className="mt-5 max-w-xl text-[0.95rem] leading-relaxed text-foreground/75 sm:text-base">
               Entdecke APIs, SDKs, Docker-Images und MCP-Server. Baue deine Infrastruktur, verbinde
               Services und deploye direkt aus einer Oberfläche.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button asChild className="glass-click gap-1.5 font-mono text-xs">
+              <Button asChild size="lg" className="glass-click gap-1.5 font-mono text-[13px]">
                 <Link to="/auth">
-                  In 30 Sekunden starten <ArrowRight className="h-3.5 w-3.5" />
+                  In 30 Sekunden starten <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="glass-click gap-2 font-mono text-xs">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="glass-click gap-2 font-mono text-[13px]"
+              >
                 <Link to="/entdecken">
-                  Ökosystem entdecken <LayoutGrid className="h-3.5 w-3.5 text-primary" />
+                  Ökosystem entdecken <LayoutGrid className="h-4 w-4 text-primary" />
                 </Link>
               </Button>
             </div>
+
 
             <BootstrapTerminal className="mt-10 w-full text-left" />
           </div>
