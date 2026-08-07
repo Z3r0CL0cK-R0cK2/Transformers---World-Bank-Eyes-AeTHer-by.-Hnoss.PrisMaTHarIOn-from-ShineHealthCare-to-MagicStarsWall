@@ -5,7 +5,12 @@ export type MotionLevel = "full" | "reduced" | "off";
 const STORAGE_KEY = "titan-motion-level";
 
 function apply(level: MotionLevel) {
-  document.documentElement.dataset["motion"] = level;
+  if (typeof document === "undefined") return;
+  try {
+    document.documentElement.setAttribute("data-motion", level);
+  } catch {
+    /* ignore environments that block attribute writes */
+  }
 }
 
 export function useMotionLevel() {
