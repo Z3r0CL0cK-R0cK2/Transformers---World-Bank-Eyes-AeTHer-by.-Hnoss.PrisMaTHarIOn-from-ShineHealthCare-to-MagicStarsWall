@@ -165,12 +165,13 @@ function Feature({
   body: string;
 }) {
   return (
-    <div>
-      <div className="grid h-8 w-8 place-items-center rounded border border-border bg-card">
+    <div className="titan-case specular-sweep p-5">
+      <div className="grid h-9 w-9 place-items-center rounded border border-border bg-card/60 glow-eu">
         <Icon className="h-4 w-4 text-primary" />
       </div>
-      <h3 className="mt-3 text-sm font-semibold">{title}</h3>
+      <h3 className="text-glow-soft mt-3 text-sm font-semibold">{title}</h3>
       <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{body}</p>
     </div>
   );
+
 }
