@@ -109,10 +109,11 @@ export function TopBar() {
             </span>
           </Link>
 
-          <span className="hidden items-center gap-1.5 rounded-full border border-border px-2 py-0.5 font-mono text-[10px] text-muted-foreground md:inline-flex">
+          <span className="hidden items-center gap-1.5 rounded-full border border-border px-2 py-0.5 font-mono text-[10px] text-muted-foreground 2xl:inline-flex">
             <span className="dot-live" />
             Alle Systeme betriebsbereit
           </span>
+
         </div>
 
         <div className="hidden justify-center lg:flex">
