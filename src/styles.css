@@ -636,3 +636,121 @@
     animation-iteration-count: 1 !important;
   }
 }
+
+/* ---------- Titanium polish: Glow-Schrift, Metall-Cases, Rainbow-Rand ---------- */
+
+@utility text-glow-soft {
+  text-shadow:
+    0 0 1px color-mix(in oklab, var(--silver) 60%, transparent),
+    0 0 18px color-mix(in oklab, var(--silver) 22%, transparent),
+    0 0 48px color-mix(in oklab, var(--eu) 18%, transparent);
+}
+
+@utility text-glow-vivid {
+  text-shadow:
+    0 0 12px color-mix(in oklab, var(--vivid) 45%, transparent),
+    0 0 36px color-mix(in oklab, var(--vivid) 22%, transparent);
+}
+
+@utility text-glow-eu {
+  text-shadow:
+    0 0 12px color-mix(in oklab, var(--eu) 45%, transparent),
+    0 0 36px color-mix(in oklab, var(--eu) 22%, transparent);
+}
+
+/* Stärker metallische Case-Oberfläche mit Titan-Sheen und Glow. */
+@utility titan-case {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in oklab, var(--silver) 24%, transparent);
+  background:
+    linear-gradient(
+      160deg,
+      color-mix(in oklab, var(--silver) 13%, transparent) 0%,
+      transparent 38%,
+      transparent 62%,
+      color-mix(in oklab, var(--eu) 9%, transparent) 100%
+    ),
+    color-mix(in oklab, var(--card) 90%, var(--silver) 8%);
+  box-shadow:
+    var(--shadow-titan),
+    inset 0 1px 0 color-mix(in oklab, var(--silver) 26%, transparent),
+    inset 0 -1px 0 color-mix(in oklab, var(--background) 60%, transparent),
+    0 0 34px -20px var(--eu);
+  transition:
+    box-shadow 260ms ease,
+    transform 260ms ease,
+    border-color 260ms ease;
+  &:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklab, var(--silver) 38%, transparent);
+    box-shadow:
+      var(--shadow-titan),
+      inset 0 1px 0 color-mix(in oklab, var(--silver) 34%, transparent),
+      0 0 42px -14px var(--eu),
+      0 0 60px -26px var(--vivid);
+  }
+}
+
+@utility text-rise {
+  animation: text-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility text-shimmer {
+  background: linear-gradient(
+    100deg,
+    color-mix(in oklab, var(--foreground) 92%, transparent) 30%,
+    oklch(1 0 0) 46%,
+    color-mix(in oklab, var(--foreground) 92%, transparent) 62%
+  );
+  background-size: 240% 100%;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer-slide 6s linear infinite;
+}
+
+@keyframes text-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes shimmer-slide {
+  0% {
+    background-position: 180% 0;
+  }
+  100% {
+    background-position: -80% 0;
+  }
+}
+
+@keyframes rainbow-drift {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+@keyframes rainbow-hue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+[data-motion="off"] .text-rise,
+[data-motion="off"] .text-shimmer {
+  animation: none;
+}
