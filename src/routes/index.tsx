@@ -129,7 +129,8 @@ function Landing() {
         </section>
 
         <section className="border-t border-border px-4 py-12 lg:px-8">
-          <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 rounded-md border border-border bg-card p-6">
+          <div className="titan-case specular-sweep mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 p-6">
+
             <div className="min-w-0">
               <h2 className="flex items-center gap-2 text-base font-semibold">
                 <Boxes className="h-4 w-4 text-primary" /> Bereit für den ersten Deploy?
