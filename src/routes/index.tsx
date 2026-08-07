@@ -104,7 +104,15 @@ function Landing() {
 
         <section className="px-4 py-10 lg:px-8">
           <SectionDock />
+          <div className="mt-4 flex justify-center">
+            <Button asChild variant="outline" size="sm" className="gap-1.5 font-mono text-xs">
+              <Link to="/netzwerk">
+                Validiertes Ecosystem-Netzwerk <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </Button>
+          </div>
         </section>
+
 
 
 
