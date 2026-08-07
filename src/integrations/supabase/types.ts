@@ -35,7 +35,7 @@ export type Database = {
           name: string
           revoked?: boolean
           scopes?: string[]
-          user_id: string
+          user_id?: string
         }
         Update: {
           created_at?: string
@@ -69,7 +69,7 @@ export type Database = {
           label: string
           slug: string
           status?: string
-          user_id: string
+          user_id?: string
         }
         Update: {
           application_id?: string | null
@@ -120,7 +120,7 @@ export type Database = {
           tier?: string
           title: string
           updated_at?: string
-          user_id: string
+          user_id?: string
         }
         Update: {
           catalog_item_id?: string | null
@@ -217,7 +217,7 @@ export type Database = {
           log?: string
           repository_id?: string | null
           status?: string
-          user_id: string
+          user_id?: string
         }
         Update: {
           commit_sha?: string | null
@@ -267,7 +267,7 @@ export type Database = {
           solution_name: string
           status?: string
           updated_at?: string
-          user_id: string
+          user_id?: string
           website: string
         }
         Update: {
@@ -331,7 +331,7 @@ export type Database = {
           id?: string
           provider?: string
           url: string
-          user_id: string
+          user_id?: string
         }
         Update: {
           created_at?: string
@@ -361,7 +361,7 @@ export type Database = {
           label: string
           phase?: string
           severity?: string
-          user_id: string
+          user_id?: string
         }
         Update: {
           created_at?: string
