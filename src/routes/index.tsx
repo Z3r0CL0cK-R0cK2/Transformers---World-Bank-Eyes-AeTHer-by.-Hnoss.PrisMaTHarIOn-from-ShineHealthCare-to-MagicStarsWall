@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Boxes, Container, ShieldCheck, Terminal, Zap } from "lucide-react";
+import { ArrowRight, Boxes, Container, LayoutGrid, ShieldCheck, Terminal, Zap } from "lucide-react";
 import { TopBar } from "@/components/portal/top-bar";
 import { BlueprintBackground } from "@/components/portal/blueprint-background";
 import { BootstrapTerminal } from "@/components/portal/bootstrap-terminal";
+import { SectionDock } from "@/components/portal/section-dock";
 import { StatusNodes } from "@/components/portal/status-nodes";
 import { Button } from "@/components/ui/button";
-import { navSections } from "@/components/portal/nav-config";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
