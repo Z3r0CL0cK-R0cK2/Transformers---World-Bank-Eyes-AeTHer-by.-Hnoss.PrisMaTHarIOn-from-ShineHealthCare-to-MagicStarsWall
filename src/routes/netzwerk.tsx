@@ -245,7 +245,7 @@ function LinkChip({
   icon: Icon,
   label,
 }: {
-  href?: string;
+  href?: string | undefined;
   icon: typeof Mail;
   label: string;
 }) {

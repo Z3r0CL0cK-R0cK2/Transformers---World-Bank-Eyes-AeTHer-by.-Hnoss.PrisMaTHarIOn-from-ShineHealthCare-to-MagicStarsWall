@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as EntdeckenRouteImport } from './routes/entdecken'
+import { Route as NetzwerkRouteImport } from './routes/netzwerk'
 import { Route as StartRouteImport } from './routes/start'
 import { Route as AuthenticatedBlueprintsRouteImport } from './routes/_authenticated/blueprints'
 import { Route as AuthenticatedCanvasRouteImport } from './routes/_authenticated/canvas'
@@ -37,6 +38,11 @@ const AuthRoute = AuthRouteImport.update({
 const EntdeckenRoute = EntdeckenRouteImport.update({
   id: '/entdecken',
   path: '/entdecken',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetzwerkRoute = NetzwerkRouteImport.update({
+  id: '/netzwerk',
+  path: '/netzwerk',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StartRoute = StartRouteImport.update({
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/entdecken': typeof EntdeckenRoute
+  '/netzwerk': typeof NetzwerkRoute
   '/start': typeof StartRoute
   '/blueprints': typeof AuthenticatedBlueprintsRoute
   '/canvas': typeof AuthenticatedCanvasRoute
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/entdecken': typeof EntdeckenRoute
+  '/netzwerk': typeof NetzwerkRoute
   '/start': typeof StartRoute
   '/blueprints': typeof AuthenticatedBlueprintsRoute
   '/canvas': typeof AuthenticatedCanvasRoute
@@ -98,6 +106,7 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
   '/entdecken': typeof EntdeckenRoute
+  '/netzwerk': typeof NetzwerkRoute
   '/start': typeof StartRoute
   '/_authenticated/blueprints': typeof AuthenticatedBlueprintsRoute
   '/_authenticated/canvas': typeof AuthenticatedCanvasRoute
@@ -111,6 +120,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/entdecken'
+    | '/netzwerk'
     | '/start'
     | '/blueprints'
     | '/canvas'
@@ -122,6 +132,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/entdecken'
+    | '/netzwerk'
     | '/start'
     | '/blueprints'
     | '/canvas'
@@ -134,6 +145,7 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/auth'
     | '/entdecken'
+    | '/netzwerk'
     | '/start'
     | '/_authenticated/blueprints'
     | '/_authenticated/canvas'
@@ -147,6 +159,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
   EntdeckenRoute: typeof EntdeckenRoute
+  NetzwerkRoute: typeof NetzwerkRoute
   StartRoute: typeof StartRoute
 }
 
@@ -178,6 +191,13 @@ declare module '@tanstack/react-router' {
       path: '/entdecken'
       fullPath: '/entdecken'
       preLoaderRoute: typeof EntdeckenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/netzwerk': {
+      id: '/netzwerk'
+      path: '/netzwerk'
+      fullPath: '/netzwerk'
+      preLoaderRoute: typeof NetzwerkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/start': {
@@ -249,6 +269,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
   EntdeckenRoute: EntdeckenRoute,
+  NetzwerkRoute: NetzwerkRoute,
   StartRoute: StartRoute,
 }
 export const routeTree = rootRouteImport
