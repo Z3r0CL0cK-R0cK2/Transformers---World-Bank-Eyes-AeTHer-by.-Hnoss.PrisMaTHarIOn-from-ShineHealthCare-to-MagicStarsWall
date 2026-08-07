@@ -91,6 +91,57 @@ export type Database = {
           },
         ]
       }
+      blueprints: {
+        Row: {
+          accent: string
+          category: string
+          created_at: string
+          edge_count: number
+          graph: Json
+          id: string
+          is_public: boolean
+          name: string
+          node_count: number
+          slug: string
+          summary: string
+          tags: string[]
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          accent?: string
+          category?: string
+          created_at?: string
+          edge_count?: number
+          graph?: Json
+          id?: string
+          is_public?: boolean
+          name: string
+          node_count?: number
+          slug: string
+          summary?: string
+          tags?: string[]
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          accent?: string
+          category?: string
+          created_at?: string
+          edge_count?: number
+          graph?: Json
+          id?: string
+          is_public?: boolean
+          name?: string
+          node_count?: number
+          slug?: string
+          summary?: string
+          tags?: string[]
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       canvas_nodes: {
         Row: {
           catalog_item_id: string | null
