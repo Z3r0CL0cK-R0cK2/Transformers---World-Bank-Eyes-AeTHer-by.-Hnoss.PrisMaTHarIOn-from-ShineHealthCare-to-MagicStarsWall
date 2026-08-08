@@ -123,7 +123,14 @@ function NetworkPage() {
           ) : null}
         </div>
 
+        <Button asChild size="sm" variant="outline" className="gap-1.5 font-mono text-xs">
+          <a href="/verzeichnis">
+            <ShieldCheck className="h-3.5 w-3.5" /> Live validiertes Verzeichnis (472 Domains)
+          </a>
+        </Button>
+
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
+
           <div className="relative min-w-0">
             <Search className="absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
             <Input
