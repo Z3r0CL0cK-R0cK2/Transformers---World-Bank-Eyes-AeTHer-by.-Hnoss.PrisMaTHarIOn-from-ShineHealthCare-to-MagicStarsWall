@@ -15,6 +15,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as EntdeckenRouteImport } from './routes/entdecken'
 import { Route as NetzwerkRouteImport } from './routes/netzwerk'
 import { Route as StartRouteImport } from './routes/start'
+import { Route as VerzeichnisRouteImport } from './routes/verzeichnis'
 import { Route as AuthenticatedBlueprintsRouteImport } from './routes/_authenticated/blueprints'
 import { Route as AuthenticatedCanvasRouteImport } from './routes/_authenticated/canvas'
 import { Route as AuthenticatedDeployRouteImport } from './routes/_authenticated/deploy'
@@ -50,6 +51,11 @@ const StartRoute = StartRouteImport.update({
   path: '/start',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VerzeichnisRoute = VerzeichnisRouteImport.update({
+  id: '/verzeichnis',
+  path: '/verzeichnis',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedBlueprintsRoute = AuthenticatedBlueprintsRouteImport.update({
   id: '/blueprints',
   path: '/blueprints',
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/entdecken': typeof EntdeckenRoute
   '/netzwerk': typeof NetzwerkRoute
   '/start': typeof StartRoute
+  '/verzeichnis': typeof VerzeichnisRoute
   '/blueprints': typeof AuthenticatedBlueprintsRoute
   '/canvas': typeof AuthenticatedCanvasRoute
   '/deploy': typeof AuthenticatedDeployRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/entdecken': typeof EntdeckenRoute
   '/netzwerk': typeof NetzwerkRoute
   '/start': typeof StartRoute
+  '/verzeichnis': typeof VerzeichnisRoute
   '/blueprints': typeof AuthenticatedBlueprintsRoute
   '/canvas': typeof AuthenticatedCanvasRoute
   '/deploy': typeof AuthenticatedDeployRoute
@@ -108,6 +116,7 @@ export interface FileRoutesById {
   '/entdecken': typeof EntdeckenRoute
   '/netzwerk': typeof NetzwerkRoute
   '/start': typeof StartRoute
+  '/verzeichnis': typeof VerzeichnisRoute
   '/_authenticated/blueprints': typeof AuthenticatedBlueprintsRoute
   '/_authenticated/canvas': typeof AuthenticatedCanvasRoute
   '/_authenticated/deploy': typeof AuthenticatedDeployRoute
@@ -122,6 +131,7 @@ export interface FileRouteTypes {
     | '/entdecken'
     | '/netzwerk'
     | '/start'
+    | '/verzeichnis'
     | '/blueprints'
     | '/canvas'
     | '/deploy'
@@ -134,6 +144,7 @@ export interface FileRouteTypes {
     | '/entdecken'
     | '/netzwerk'
     | '/start'
+    | '/verzeichnis'
     | '/blueprints'
     | '/canvas'
     | '/deploy'
@@ -147,6 +158,7 @@ export interface FileRouteTypes {
     | '/entdecken'
     | '/netzwerk'
     | '/start'
+    | '/verzeichnis'
     | '/_authenticated/blueprints'
     | '/_authenticated/canvas'
     | '/_authenticated/deploy'
@@ -161,6 +173,7 @@ export interface RootRouteChildren {
   EntdeckenRoute: typeof EntdeckenRoute
   NetzwerkRoute: typeof NetzwerkRoute
   StartRoute: typeof StartRoute
+  VerzeichnisRoute: typeof VerzeichnisRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       path: '/start'
       fullPath: '/start'
       preLoaderRoute: typeof StartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verzeichnis': {
+      id: '/verzeichnis'
+      path: '/verzeichnis'
+      fullPath: '/verzeichnis'
+      preLoaderRoute: typeof VerzeichnisRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/blueprints': {
@@ -271,6 +291,7 @@ const rootRouteChildren: RootRouteChildren = {
   EntdeckenRoute: EntdeckenRoute,
   NetzwerkRoute: NetzwerkRoute,
   StartRoute: StartRoute,
+  VerzeichnisRoute: VerzeichnisRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
